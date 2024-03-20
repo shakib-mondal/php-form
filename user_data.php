@@ -1,67 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>User Registration Form</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-  <div class="container mt-4">
-    <h2>User Registration Form</h2>
-    <form id="registrationForm" novalidate>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="firstName">First Name <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" id="firstName" name="firstName" required>
-          <div class="invalid-feedback">Please provide your first name.</div>
-        </div>
-        <div class="form-group col-md-6">
-          <label for="lastName">Last Name</label>
-          <input type="text" class="form-control" id="lastName" name="lastName" required>
-          <div class="invalid-feedback">Please provide your last name.</div>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="countryCode">Country Code <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" id="countryCode" name="countryCode" required>
-          <div class="invalid-feedback">Please provide your country code.</div>
-        </div>
-        <div class="form-group col-md-6">
-          <label for="contactNumber">Contact Number <span class="text-danger">*</span></label>
-          <input type="number" class="form-control" id="contactNumber" name="contactNumber" required>
-          <div class="invalid-feedback">Please provide your contact number.</div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="address">Address</label>
-        <input type="text" class="form-control" id="address" name="address" required>
-        <div class="invalid-feedback">Please provide your address.</div>
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="gender">Gender</label>
-          <select class="form-control" id="gender" name="gender" required>
-            <option value="">Choose...</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-          </select>
-          <div class="invalid-feedback">Please select your gender.</div>
-        </div>
-        <div class="form-group col-md-6">
-          <label for="email">Email Address <span class="text-danger">*</span></label>
-          <input type="email" class="form-control" id="email" name="email" required>
-          <div class="invalid-feedback">Please provide a valid email address.</div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="birthdate">Birthdate <span class="text-danger">*</span></label>
-        <input type="date" class="form-control" id="birthdate" name="birthdate" required>
-        <div class="invalid-feedback">Please provide your birthdate.</div>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </div>
-</body>
-</html>
+<?php
+// // Connect to the database
+// $conn = new mysqli("localhost", "username", "password", "your_database");
+
+// // Check connection
+// if ($conn->connect_error) {
+//     die("Connection failed: " . $conn->connect_error);
+// }
+
+// Sanitize form data
+$firstName = $_POST['firstName'];
+$lastName = $_POST['lastName'];
+$countryCode = $_POST['countryCode'];
+$contactNumber = $_POST['contactNumber'];
+$address = $_POST['address'];
+$gender = $_POST['gender'];
+$email = $_POST['email'];
+$birthdate = $_POST['birthdate'];
+
+
+
+// Print form data
+echo "First Name: $firstName <br>";
+echo "Last Name: $lastName <br>";
+echo "Country Code: $countryCode <br>";
+echo "Contact Number: $contactNumber <br>";
+echo "Address: $address <br>";
+echo "Gender: $gender <br>";
+echo "Email: $email <br>";
+echo "Birthdate: $birthdate <br>";
+
+
+
+// // Insert data into the database
+// $sql = "INSERT INTO users (first_name, last_name, country_code, contact_number, address, gender, email, birthdate) VALUES ('$firstName', '$lastName', '$countryCode', '$contactNumber', '$address', '$gender', '$email', '$birthdate')";
+
+// if ($conn->query($sql) === TRUE) {
+//     echo "Welcome $firstName!";
+// } else {
+//     echo "Error: " . $sql . "<br>" . $conn->error;
+// }
+
+// // Close connection
+// $conn->close();
+?>
